@@ -9,7 +9,7 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.ruff": "always",
-    "source.organizeImports": "always"
+    "source.organizeImports.ruff": "always"
   },
   "editor.defaultFormatter": "charliermarsh.ruff",
 }

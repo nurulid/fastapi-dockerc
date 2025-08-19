@@ -18,8 +18,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - 5430:80 
-    depends_on:
-      - db
+    depends_on: # This ensures pgAdmin starts after the database is ready
+      - db # Ensure pgAdmin waits for the db service
 
 volumes:
   pg_data:

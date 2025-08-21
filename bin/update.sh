@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /home/nurulid/app
+cd /home/nurulid/app-fastapi-docker-compose
 echo "Updating code..."
 git fetch origin
 git reset --hard origin/main

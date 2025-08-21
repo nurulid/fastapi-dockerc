@@ -1,3 +1,4 @@
+from sqlalchemy.orm import selectinload
 from sqlmodel import Session, select
 
 from app.models.database import User
@@ -32,7 +33,8 @@ def create_user(db_session: Session, user: UserCreate):
   return new_user
 
 def get_user(db_session: Session, user_id: str):
-  return db_session.get(User, user_id)
+  statement = select(User).options(selectinload(User.posts)).where(User.id == user_id)
+  return db_session.exec(statement).first()
 
 def get_users(db_session: Session):
   return db_session.exec(select(User)).all()

@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
+from app.schema.post import PostRead
+
 
 class UserCreate(BaseModel):
     full_name: str
@@ -10,3 +12,4 @@ class UserRead(BaseModel):
     id: str
     full_name: str
     email: str
+    posts: list["PostRead"] = []  # This will be populated with the user's posts

@@ -21,5 +21,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT || 22 }}
           script: |
-            cd /home/nurulid/app-fastapi-docker-compose/bin
+            cd /home/nurulid/app-dockerc/fastapi-dockerc/bin
             ./update.sh

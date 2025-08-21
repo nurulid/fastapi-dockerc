@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-cd /home/indrazm/app
+cd /home/nurulid/app
 echo "Updating code..."
 git fetch origin
 git reset --hard origin/main

@@ -173,6 +173,7 @@ dependencies = [
     { name = "psycopg2-binary" },
     { name = "pydantic-settings" },
     { name = "ruff" },
+    { name = "scalar-fastapi" },
     { name = "sqlmodel" },
     { name = "uvicorn" },
 ]
@@ -185,6 +186,7 @@ requires-dist = [
     { name = "psycopg2-binary", specifier = ">=2.9.10" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
     { name = "ruff", specifier = ">=0.12.9" },
+    { name = "scalar-fastapi", specifier = ">=1.2.3" },
     { name = "sqlmodel", specifier = ">=0.0.24" },
     { name = "uvicorn", specifier = ">=0.35.0" },
 ]
@@ -567,6 +569,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/c1/5f9a839a697ce1acd7af44836f7c2181cdae5accd17a5cb85fcbd694075e/ruff-0.12.9-py3-none-win32.whl", hash = "sha256:cc7a37bd2509974379d0115cc5608a1a4a6c4bff1b452ea69db83c8855d53f93", size = 11734785, upload-time = "2025-08-14T16:08:48.062Z" },
     { url = "https://files.pythonhosted.org/packages/fa/66/cdddc2d1d9a9f677520b7cfc490d234336f523d4b429c1298de359a3be08/ruff-0.12.9-py3-none-win_amd64.whl", hash = "sha256:6fb15b1977309741d7d098c8a3cb7a30bc112760a00fb6efb7abc85f00ba5908", size = 12840654, upload-time = "2025-08-14T16:08:50.158Z" },
     { url = "https://files.pythonhosted.org/packages/ac/fd/669816bc6b5b93b9586f3c1d87cd6bc05028470b3ecfebb5938252c47a35/ruff-0.12.9-py3-none-win_arm64.whl", hash = "sha256:63c8c819739d86b96d500cce885956a1a48ab056bbcbc61b747ad494b2485089", size = 11949623, upload-time = "2025-08-14T16:08:52.233Z" },
+]
+
+[[package]]
+name = "scalar-fastapi"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/74/f2/28e52535f13bef8781e45cb92a28fe52f28c300a132fc9d8f3db52e2f26e/scalar_fastapi-1.2.3.tar.gz", hash = "sha256:cf9ba36947ea1b0402fc1fa311f30a690b39e3baedef1f7b4553cf57002daceb", size = 10356, upload-time = "2025-07-29T22:44:35.653Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/d7/7b32f0dd732a8c19b97005179bf5e9a0dbddb76341fea3c967c77b95e722/scalar_fastapi-1.2.3-py3-none-any.whl", hash = "sha256:15e0809d05d5b476faf299c3f20e003c6a594ea00d8be50db2efd23b5a9be30d", size = 12450, upload-time = "2025-07-29T22:44:34.427Z" },
 ]
 
 [[package]]

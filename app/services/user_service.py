@@ -33,8 +33,25 @@ def create_user(db_session: Session, user: UserCreate):
   return new_user
 
 def get_user(db_session: Session, user_id: str):
+  # cara pertama untuk mendapatkan post dari user, mwnggunakan selectinload
+  # ini akan mengambil user beserta postnya dalam satu query
+  # ini akan mengurangi jumlah query yang dilakukan ke database
+  # sehingga lebih efisien, terutama jika jumlah postnya banyak
+  # selectinload akan melakukan query terpisah untuk mengambil post dari user
+  # sehingga tidak akan mempengaruhi performa jika jumlah postnya sedikit
+  # cara paling umum digunakan
   statement = select(User).options(selectinload(User.posts)).where(User.id == user_id)
   return db_session.exec(statement).first()
+
+  # cara kedua, lazy load
+  # ini akan mengambil user terlebih dahulu, kemudian mengambil postnya
+  # statement = select(User).where(User.id == user_id)
+  # user = db_session.exec(statement).first()
+
+  # _ = user.posts # lazy query, ini akan memicu query untuk mengambil post dari user
+  # jika tidak ada post, maka akan mengembalikan list kosong
+  # return user
+
 
 def get_users(db_session: Session):
   return db_session.exec(select(User)).all()

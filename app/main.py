@@ -13,6 +13,10 @@ app = FastAPI(
 
 app.include_router(users_router)
 
+@app.get("/")
+def read_root():
+    return {"message": "CI/CD nih BOSS.. Welcome to the FastAPI application!"}
+
 @app.get("/scalar")
 def get_scalar():
     return get_scalar_api_reference(

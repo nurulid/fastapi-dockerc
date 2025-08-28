@@ -18,9 +18,9 @@ class Settings(BaseSettings):
   # Merangkai semua informasi koneksi ke database
   # Contoh: postgresql://user:password@host:port/dbname
   # Gunakan format string untuk menggabungkan variabel-variabel di atas
-  DB_CONNECTION_STR: str = (
-      f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-  )
+  @property
+  def DB_CONNECTION_STR(self) -> str:
+      return f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
   class Config:
     env_file = ".env"

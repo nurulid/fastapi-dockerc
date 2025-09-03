@@ -1,5 +1,6 @@
 name: Deploy to production
 
+# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
@@ -7,14 +8,20 @@ on:
 
 jobs:
   deploy:
+    # The type of runner that the job will run on 
+    # delpoy di jalankan di satu vm baru setiap kali ada push ke main pake ubuntu-latest
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout/download the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Deploy to the server using SSH
       - name: Deploy to Server
         uses: appleboy/ssh-action@v1.0.3
+        # Ensure you have set the following secrets in your GitHub repository:
+        # SSH_HOST, SSH_USERNAME, SSH_PRIVATE_KEY
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
@@ -23,3 +30,4 @@ jobs:
           script: |
             cd /home/nurulid/app-dockerc/fastapi-dockerc/bin
             ./update.sh
+          # Sesuaikan dengan path di server
